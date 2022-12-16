@@ -1,4 +1,5 @@
 ﻿using AdventOfCode.Day;
+using AdventOfCode.Days;
 
 namespace AdventOfCode
 {
@@ -22,20 +23,20 @@ namespace AdventOfCode
             string[] input;
 
             // Check whether input exists for the day.
-            if (!File.Exists($@"C:\Development\Projects\Personal\AdventOfCode\Inputs\day{day}.txt"))
+            if (!File.Exists($"{Path.GetFullPath(@"..\..\..\")}\\Inputs\\day{day}.txt"))
                 return "This day has not yet been developed.";
 
             // Get the input for the requested day.
-            input = File.ReadAllLines($@"C:\Development\Projects\Personal\AdventOfCode\Inputs\day{day}.txt");
+            input = File.ReadAllLines($"{Path.GetFullPath(@"..\..\..\")}\\Inputs\\day{day}.txt");
 
             // Check which day the user requested.
             switch (day)
             {
                 case 1: return Day1.Solve(input);
                 case 2: return Day2.Solve(input);
+                case 3: return Day3.Solve(input);
             }
 
-            // Inform the user that the requested day doesn't exist.
             return "This day has not yet been developed.";
         }
 

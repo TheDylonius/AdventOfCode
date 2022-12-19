@@ -12,10 +12,6 @@
             var partOneScores = new List<int>();
             var partTwoScores = new List<int>();
 
-            // Pre-define the current round score.
-            var currentRoundScore = 0;
-            var partTwoScore = 0;
-
             // Loop through each line in the input file.
             foreach (var line in input)
             {
@@ -27,9 +23,10 @@
             // Loop through each of the moves.
             for (var i = 0; i < opponentMoves.Count; i++)
             {
+                // Pre-define the current round score.
                 // Reset the current round's score.
-                currentRoundScore = 0;
-                partTwoScore = 0;
+                int currentRoundScore = 0;
+                int partTwoScore = 0;
 
                 // Check what the recommended move is.
                 switch (recommendedMoves[i])

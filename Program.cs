@@ -12,13 +12,10 @@ namespace AdventOfCode
             var day = GetIntAsInput();
 
             // Provide the answer for the specified day.
-            Console.WriteLine($"\nAnswers\n{GetAnswer(day)}");
-
-            // Await input before closing the console.
-            //Console.Read();
+            Console.WriteLine($"\nAnswers\n{GetAnswers(day)}");
         }
 
-        private static string GetAnswer(int day)
+        private static string GetAnswers(int day)
         {
             string[] input;
 
@@ -35,6 +32,8 @@ namespace AdventOfCode
                 case 1: return Day1.Solve(input);
                 case 2: return Day2.Solve(input);
                 case 3: return Day3.Solve(input);
+                default:
+                    break;
             }
 
             return "This day has not yet been developed.";
@@ -42,7 +41,7 @@ namespace AdventOfCode
 
         private static int GetIntAsInput()
         {
-            var result = 0;
+            int result;
 
             // Get initial input from the user.
             string? input = Console.ReadLine();
